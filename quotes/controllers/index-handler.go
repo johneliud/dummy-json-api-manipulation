@@ -13,7 +13,6 @@ import (
 // IndexHandler serves the index page by populating fetched data.
 func IndexHandler(w http.ResponseWriter, r *http.Request) {
 	if r.URL.Path != "/" {
-		log.Println("Not found.")
 		http.NotFound(w, r)
 		return
 	}
