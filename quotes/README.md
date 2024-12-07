@@ -29,7 +29,13 @@ This project uses quotes fetched from Dummy JSON's [quotes](https://dummyjson.co
     go run main.go
     ```
 
-A message is logged displaying the port at which the server is running on. `http://localhost:8080` is the hardcoded port."
+    OR
+
+    ```bash
+    go run main.go [PORT]
+    ```
+
+A message is logged displaying the port at which the server is running on. `http://localhost:8080` is the default port."
 
 - Paste the URL on your preferred web browser
 
