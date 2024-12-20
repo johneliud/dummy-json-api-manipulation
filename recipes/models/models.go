@@ -1,7 +1,7 @@
 package models
 
 type Recipes struct {
-	Recipes []Recipe
+	Recipes []Recipe `json:"recipes"`
 }
 
 type Recipe struct {
