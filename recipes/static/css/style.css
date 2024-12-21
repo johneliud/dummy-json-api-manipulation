@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans";
+}
+
+ul,
+li,
+a {
+  text-decoration: none;
+  list-style: none;
+}
+
+:root {
+  --text-color: #000000;
+  --background-color: #ffffff;
+  --span-color: #d35e35;
+  --dark-blue: #3d4251;
+  --light-blue: #666f88;
+  --pale-blue: #cacbd5;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  box-shadow: 0 1.5px 10px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+.navbar .logo a {
+  color: var(--text-color);
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.navbar .logo a span {
+  color: var(--span-color);
+}
+
+.navbar .search-container {
+  width: 35%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.navbar .search-container input {
+  width: 100%;
+  padding: 5px 35px;
+  outline: none;
+  border-radius: 10px;
+  border: 1px solid var(--text-color);
+  font-size: 16px;
+}
+
+.navbar .search-container ion-icon {
+  position: absolute;
+  left: 10px;
+}
+
+.navbar .nav-links {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar .nav-links .link.active {
+  border-bottom: 2px solid var(--span-color);
+}
+
+.navbar .nav-links .link a {
+  font-size: 16px;
+  color: var(--text-color);
+}
+
+.navbar .nav-links .link:hover a {
+  color: var(--span-color);
+}
+
+main {
+  flex: 1;
+}
