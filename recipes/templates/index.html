@@ -48,10 +48,14 @@
           </div>
 
           <div class="details-wrapper">
-            <p class="recipe-name">{{ .Name }}</p>
+            <div class="recipe-name-container">
+              <p class="recipe-name">{{ .Name }}</p>
+            </div>
 
             <div class="further-info-container">
-              <div class="ratings-container">{{ renderRatingStars .Rating }}</div>
+              <div class="ratings-container">
+                {{ renderRatingStars .Rating }}
+              </div>
 
               <div class="cuisine-container">
                 <p>{{ .Cuisine }}</p>
