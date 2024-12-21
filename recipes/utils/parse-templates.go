@@ -1,18 +1,20 @@
 package utils
 
 import (
-	"log"
 	"path/filepath"
+
 	"text/template"
 )
 
+// ParseTemplate uses a FuncMap to register RenderRatingStars to be called from any of the templates.
 func ParseTemplates() *template.Template {
-	path := filepath.Join("templates", "*.html")
-
-	tmpl, err := template.ParseGlob(path)
-	if err != nil {
-		log.Printf("Failed parsing template %v: %v\n", path, err)
-		return nil
+	funcMap := template.FuncMap{
+		"renderRatingStars": RenderRatingStars,
 	}
+
+	path := filepath.Join("templates", "*.html")
+	tmpl := template.Must(
+		template.New("").Funcs(funcMap).ParseGlob(path),
+	)
 	return tmpl
 }
