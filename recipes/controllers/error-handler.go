@@ -3,22 +3,16 @@ package controllers
 import (
 	"log"
 	"net/http"
-	"path/filepath"
 	"recipes/models"
-	"text/template"
+	"recipes/utils"
 )
 
 func errorHandler(w http.ResponseWriter, errorPage models.ErrorPage) {
-	path := filepath.Join("templates", "error-page.html")
-	tmpl, err := template.ParseFiles(path)
-	if err != nil {
-		http.Error(w, "An Unexpected Error Occurred. Try Again Later", http.StatusInternalServerError)
-		log.Printf("Error parsing template %s: %v\n", path, err)
-		return
-	}
+	tmpl := utils.ParseTemplates()
+
 	w.WriteHeader(errorPage.StatusCode)
 
-	if err := tmpl.Execute(w, errorPage); err != nil {
+	if err := tmpl.ExecuteTemplate(w, "error-page.html", errorPage); err != nil {
 		http.Error(w, "An Unexpected Error Occurred. Try Again Later", http.StatusInternalServerError)
 		log.Printf("Error executing template: %v\n", err)
 	}
