@@ -134,12 +134,16 @@ main {
 
 .recipe .details-wrapper {
   display: grid;
-  row-gap: 10px;
+  height: 50%;
 }
 
-.details-wrapper .recipe-name {
+.details-wrapper .recipe-name-container {
+  width: 75%;
+}
+
+.details-wrapper .recipe-name-container .recipe-name {
   font-weight: 900;
-  font-size: 24px;
+  font-size: 22px;
 }
 
 .details-wrapper .further-info-container {
