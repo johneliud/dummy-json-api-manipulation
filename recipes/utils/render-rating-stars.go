@@ -6,7 +6,7 @@ import (
 )
 
 // RenderStars dynamically generates star icons based on the rating
-func RenderRatingStars(rating float64) template.HTML {
+func renderRatingStars(rating float64) template.HTML {
 	var stars strings.Builder
 	fullStars := int(rating)
 	halfStar := rating-float64(fullStars) >= 0.5
