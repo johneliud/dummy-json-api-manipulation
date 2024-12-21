@@ -22,3 +22,8 @@ type Recipe struct {
 	ReviewCount        int      `json:"reviewCount"`
 	MealType           []string `json:"mealType"`
 }
+
+type ErrorPage struct {
+	StatusCode   int
+	ErrorMessage string
+}
