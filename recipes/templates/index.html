@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="/static/css/style.css" />
+
+    <title>Recipe App</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="logo">
+        <a href="/"><span>Recipe</span>App</a>
+      </div>
+
+      <div class="search-container">
+        <input type="text" id="search-bar" placeholder="Search recipe"/>
+        <ion-icon name="search-outline"></ion-icon>
+      </div>
+
+      <ul class="nav-links">
+        <li class="link">
+          <a href="/dessert">Dessert</a>
+        </li>
+
+        <li class="link">
+          <a href="/snack">Snack</a>
+        </li>
+
+        <li class="link">
+          <a href="/lunch">Lunch</a>
+        </li>
+
+        <li class="link">
+          <a href="/dinner">Dinner</a>
+        </li>
+      </ul>
+    </nav>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="/static/js/script.js"></script>
+  </body>
+</html>
