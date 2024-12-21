@@ -9,7 +9,7 @@ import (
 // ParseTemplate uses a FuncMap to register RenderRatingStars to be called from any of the templates.
 func ParseTemplates() *template.Template {
 	funcMap := template.FuncMap{
-		"renderRatingStars": RenderRatingStars,
+		"renderRatingStars": renderRatingStars,
 	}
 
 	path := filepath.Join("templates", "*.html")
