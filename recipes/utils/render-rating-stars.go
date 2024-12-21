@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-// RenderStars dynamically generates star icons based on the rating
+// RenderStars dynamically generates star icons based on the rating.
 func renderRatingStars(rating float64) template.HTML {
 	var stars strings.Builder
 	fullStars := int(rating)
