@@ -54,7 +54,7 @@ body {
 }
 
 .navbar .nav-links {
-  width: 40%;
+  width: 50%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -66,14 +66,14 @@ body {
   border-bottom: 2px solid var(--span-color);
 }
 
-.navbar .nav-links .link a {
-  font-size: 16px;
-  color: var(--text-color);
-  text-decoration: none;
+.navbar .nav-links .link:hover {
+  border-bottom: 2px solid var(--span-color);
 }
 
-.navbar .nav-links .link:hover a {
+.navbar .nav-links .link a {
+  font-size: 16px;
   color: var(--span-color);
+  text-decoration: none;
 }
 
 main {
