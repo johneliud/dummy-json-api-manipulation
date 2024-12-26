@@ -1,4 +1,3 @@
-<!-- recipe-details.html -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,7 +7,7 @@
     <link rel="stylesheet" href="/static/css/style.css" />
     <link rel="stylesheet" href="/static/css/recipe-details.css" />
 
-    <title>{{ .Name }} - Recipe App</title>
+    <title>{{ .Name }} - Recipe</title>
   </head>
   <body>
     <!-- Navbar -->
@@ -41,10 +40,9 @@
           <div class="meta-info">
             <p><strong>Cuisine:</strong> {{ .Cuisine }}</p>
             <p><strong>Difficulty:</strong> {{ .Difficulty }}</p>
-            <p>
-              <strong>Rating:</strong> {{ .Rating }} ({{ .ReviewCount }}
-              reviews)
-            </p>
+            <p><strong>Rating:</strong> {{ .Rating }}</p>
+            <p style="color: var(--span-color);"><strong>Rating Stars:</strong> {{ renderRatingStars .Rating }}</p>
+            <p><strong>Review Count:</strong> {{ .ReviewCount }} reviews</p>
             <p><strong>Prep Time:</strong> {{ .PrepTimeMinutes }} minutes</p>
             <p><strong>Cook Time:</strong> {{ .CookTimeMinutes }} minutes</p>
             <p><strong>Servings:</strong> {{ .Servings }}</p>
