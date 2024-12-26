@@ -31,5 +31,6 @@ func IndexHandler(w http.ResponseWriter, r *http.Request) {
 	if err := tmpl.ExecuteTemplate(w, "index.html", recipes); err != nil {
 		internalServerErrorHandler(w, r)
 		log.Printf("Error executing template: %v\n", err)
+		return
 	}
 }
