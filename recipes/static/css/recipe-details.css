@@ -26,7 +26,7 @@
 .recipe-info h1 {
   margin: 0 0 1.5rem 0;
   font-size: 2.5rem;
-  color: var(--dark-blue);
+  color: var(--span-color);
 }
 
 .meta-info {
