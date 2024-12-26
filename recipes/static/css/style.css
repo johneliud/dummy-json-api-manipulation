@@ -7,13 +7,6 @@
   font-family: "Josefin Sans";
 }
 
-ul,
-li,
-a {
-  text-decoration: none;
-  list-style: none;
-}
-
 :root {
   --text-color: #000000;
   --background-color: #ffffff;
@@ -46,6 +39,7 @@ body {
   box-shadow: 0 1.5px 10px rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(10px);
   transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+  text-decoration: none;
   z-index: 10;
 }
 
@@ -64,6 +58,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  list-style: none;
 }
 
 .navbar .nav-links .link.active {
