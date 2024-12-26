@@ -44,6 +44,8 @@ body {
   justify-content: space-between;
   padding: 15px 20px;
   box-shadow: 0 1.5px 10px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
   z-index: 10;
 }
 
