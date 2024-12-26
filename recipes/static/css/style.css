@@ -36,7 +36,7 @@ body {
 
 .navbar {
   width: 100%;
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   display: flex;
@@ -79,10 +79,12 @@ body {
 
 main {
   flex: 1;
+  margin-top: 50px;
 }
 
 .recipes-container {
   width: 100%;
+  max-width: 1200px;
   margin: 2rem auto;
   padding: 0 20px;
   display: grid;
