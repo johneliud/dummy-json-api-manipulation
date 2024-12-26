@@ -21,6 +21,7 @@ a {
   --dark-blue: #3d4251;
   --light-blue: #666f88;
   --pale-blue: #cacbd5;
+  --box-shadow: 0 1.5px 10px rgba(0, 0, 0, 0.5);
 }
 
 html {
@@ -56,30 +57,6 @@ body {
   color: var(--span-color);
 }
 
-/*
-.navbar .search-container {
-  width: 35%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-}
-
-.navbar .search-container input {
-  width: 100%;
-  padding: 5px 35px;
-  outline: none;
-  border-radius: 10px;
-  border: 1px solid var(--text-color);
-  font-size: 16px;
-}
-
-.navbar .search-container ion-icon {
-  position: absolute;
-  left: 10px;
-}
-  */
-
 .navbar .nav-links {
   width: 40%;
   display: flex;
@@ -106,7 +83,7 @@ main {
 
 .recipes-container {
   width: 100%;
-  margin: 20px auto;
+  margin: 2rem auto;
   padding: 0 20px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -122,6 +99,7 @@ main {
   border-radius: 10px;
   box-shadow: 0 1.5px 10px rgba(0, 0, 0, 0.5);
   row-gap: 10px;
+  cursor: pointer;
 }
 
 .recipe .image-wrapper,
