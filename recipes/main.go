@@ -11,6 +11,7 @@ func main() {
 	port := utils.GetPort()
 
 	http.HandleFunc("/", controllers.IndexHandler)
+	http.HandleFunc("/recipe/", controllers.RecipeDetailsHandler)
 
 	fs := http.FileServer(http.Dir("./static"))
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
