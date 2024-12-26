@@ -39,7 +39,6 @@ body {
   box-shadow: 0 1.5px 10px rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(10px);
   transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
-  text-decoration: none;
   z-index: 10;
 }
 
@@ -47,6 +46,7 @@ body {
   color: var(--text-color);
   font-size: 22px;
   font-weight: 900;
+  text-decoration: none;
 }
 
 .navbar .logo a span {
@@ -59,6 +59,7 @@ body {
   align-items: center;
   justify-content: space-between;
   list-style: none;
+  font-weight: 900;
 }
 
 .navbar .nav-links .link.active {
@@ -68,6 +69,7 @@ body {
 .navbar .nav-links .link a {
   font-size: 16px;
   color: var(--text-color);
+  text-decoration: none;
 }
 
 .navbar .nav-links .link:hover a {
