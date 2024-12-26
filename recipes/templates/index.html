@@ -15,11 +15,6 @@
         <a href="/"><span>Recipe</span>App</a>
       </div>
 
-      <!-- <div class="search-container">
-        <input type="text" id="search-bar" placeholder="Search recipe" />
-        <ion-icon name="search-outline"></ion-icon>
-      </div> -->
-
       <ul class="nav-links">
         <li class="link">
           <a href="/dessert">Dessert</a>
@@ -42,7 +37,7 @@
     <main>
       <div class="recipes-container">
         {{ range .Recipes }}
-        <div class="recipe">
+        <div class="recipe" onclick="window.location.href='/recipe/{{ .ID }}'">
           <div class="image-wrapper">
             <img src="{{ .Image }}" alt="{{ .Name }}" />
           </div>
