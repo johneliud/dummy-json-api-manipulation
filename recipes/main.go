@@ -12,6 +12,10 @@ func main() {
 
 	http.HandleFunc("/", controllers.IndexHandler)
 	http.HandleFunc("/recipe/", controllers.RecipeDetailsHandler)
+	http.HandleFunc("/dessert", controllers.RecipeCategoryHandler)
+	http.HandleFunc("/snack", controllers.RecipeCategoryHandler)
+	http.HandleFunc("/lunch", controllers.RecipeCategoryHandler)
+	http.HandleFunc("/dinner", controllers.RecipeCategoryHandler)
 
 	fs := http.FileServer(http.Dir("./static"))
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
