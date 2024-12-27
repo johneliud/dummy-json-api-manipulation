@@ -19,15 +19,12 @@
         <li class="link">
           <a href="/dessert">Dessert</a>
         </li>
-
         <li class="link">
           <a href="/snack">Snack</a>
         </li>
-
         <li class="link">
           <a href="/lunch">Lunch</a>
         </li>
-
         <li class="link">
           <a href="/dinner">Dinner</a>
         </li>
@@ -35,6 +32,35 @@
     </nav>
 
     <main>
+      <!-- Featured Recipe -->
+      <div class="featured-recipe">
+        <div
+          id="featured-recipe-content"
+          onclick="window.location.href='/recipe/{{ (index .Recipes 0).ID }}'"
+        >
+          <div class="featured-image">
+            <img
+              src="{{ (index .Recipes 0).Image }}"
+              alt="{{ (index .Recipes 0).Name }}"
+            />
+          </div>
+          <div class="featured-details">
+            <h2>{{ (index .Recipes 0).Name }}</h2>
+            <div class="featured-meta">
+              <div class="ratings-container">
+                {{ renderRatingStars (index .Recipes 0).Rating }}
+              </div>
+              <p class="cuisine">{{ (index .Recipes 0).Cuisine }}</p>
+            </div>
+            <p class="description">
+              Prep Time: {{ (index .Recipes 0).PrepTimeMinutes }} mins • Cook
+              Time: {{ (index .Recipes 0).CookTimeMinutes }} mins
+            </p>
+          </div>
+        </div>
+      </div>
+
+      
       <div class="recipes-container">
         {{ range .Recipes }}
         <div class="recipe" onclick="window.location.href='/recipe/{{ .ID }}'">
@@ -51,7 +77,6 @@
               <div class="ratings-container">
                 {{ renderRatingStars .Rating }}
               </div>
-
               <div class="cuisine-container">
                 <p>{{ .Cuisine }}</p>
               </div>
