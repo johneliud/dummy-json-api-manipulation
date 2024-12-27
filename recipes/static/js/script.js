@@ -55,3 +55,8 @@ const updateFeaturedRecipe = (recipe) => {
   `;
   content.onclick = () => (window.location.href = `/recipe/${recipe.ID}`);
 };
+
+const getRandomRecipe = () => {
+  const randomIndex = Math.floor(Math.random() * recipes.length);
+  return recipes[randomIndex];
+};
