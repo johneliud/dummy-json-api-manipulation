@@ -28,10 +28,10 @@ func IndexHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	data := struct {
-		Recipes []models.Recipe
+		Recipes  []models.Recipe
 		Featured models.Recipe
 	}{
-		Recipes: recipes.Recipes,
+		Recipes:  recipes.Recipes,
 		Featured: recipes.Recipes[0], // Default featured
 	}
 
