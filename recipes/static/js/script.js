@@ -68,10 +68,16 @@ document.addEventListener("DOMContentLoaded", () => {
       ID: elem.onclick.toString().match(/\/recipe\/(\d+)/)[1],
       Name: elem.querySelector(".recipe-name").textContent,
       Image: elem.querySelector("img").src,
-      Rating: parseFloat(elem.querySelector(".ratings-container").textContent),
+      Rating: parseFloat(
+        elem.querySelector(".ratings-container").getAttribute("data-rating")
+      ),
       Cuisine: elem.querySelector(".cuisine-container p").textContent,
-      PrepTimeMinutes: 30,
-      CookTimeMinutes: 45,
+      PrepTimeMinutes: parseInt(
+        elem.querySelector(".prep-time").getAttribute("data-preptime")
+      ),
+      CookTimeMinutes: parseInt(
+        elem.querySelector(".cook-time").getAttribute("data-cooktime")
+      ),
     };
     recipes.push(recipe);
   });
