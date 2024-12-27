@@ -28,3 +28,30 @@ const renderRatingStars = (rating) => {
   }
   return stars;
 };
+
+const updateFeaturedRecipe = (recipe) => {
+  const content = document.getElementById("featured-recipe-content");
+  if (!content) {
+    return;
+  }
+
+  content.innerHTML = `
+  <div class="featured-image">
+    <img src="${recipe.Image}" alt="${recipe.Name}" />
+  </div>
+        
+  <div class="featured-details">
+    <h2>${recipe.Name}</h2>
+    <div class="featured-meta">
+      <div class="ratings-container">
+        ${renderRatingStars(recipe.Rating)}
+      </div>
+      <p class="cuisine">${recipe.Cuisine}</p>
+    </div>
+    <p class="description">Prep Time: ${
+      recipe.PrepTimeMinutes
+    } mins • Cook Time: ${recipe.CookTimeMinutes} mins</p>
+  </div>
+  `;
+  content.onclick = () => (window.location.href = `/recipe/${recipe.ID}`);
+};
