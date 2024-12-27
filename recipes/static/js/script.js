@@ -60,3 +60,24 @@ const getRandomRecipe = () => {
   const randomIndex = Math.floor(Math.random() * recipes.length);
   return recipes[randomIndex];
 };
+
+document.addEventListener("DOMContentLoaded", () => {
+  const recipeElements = document.querySelectorAll(".recipe");
+  recipeElements.forEach((elem) => {
+    const recipe = {
+      ID: elem.onclick.toString().match(/\/recipe\/(\d+)/)[1],
+      Name: elem.querySelector(".recipe-name").textContent,
+      Image: elem.querySelector("img").src,
+      Rating: parseFloat(elem.querySelector(".ratings-container").textContent),
+      Cuisine: elem.querySelector(".cuisine-container p").textContent,
+      PrepTimeMinutes: 30,
+      CookTimeMinutes: 45,
+    };
+    recipes.push(recipe);
+  });
+
+  setInterval(() => {
+    const randomRecipe = getRandomRecipe();
+    updateFeaturedRecipe(randomRecipe);
+  }, 12000);
+});
