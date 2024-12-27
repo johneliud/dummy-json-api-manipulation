@@ -4,7 +4,7 @@ This project uses recipe information fetched from [Dummy JSON](https://dummyjson
 
 ## Project Overview
 
-![](/static/img/preview.png)
+![](/recipes/static/img/preview.png)
 
 ## Prerequisites
 
