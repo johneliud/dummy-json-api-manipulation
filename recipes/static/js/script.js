@@ -11,7 +11,7 @@ let recipes = [];
 
 const renderRatingStars = (rating) => {
   const fullStars = Math.floor(rating);
-  const halfStar = rating % 1 >= 0.5;
+  const halfStar = rating - fullStars >= 0.5;
   let stars = "";
 
   for (let i = 0; i < fullStars; i++) {
@@ -24,7 +24,7 @@ const renderRatingStars = (rating) => {
 
   const emptyStars = 5 - Math.ceil(rating);
   for (let i = 0; i < emptyStars; i++) {
-    stars += '<ion-icon name="star-outline"></ion-icon>';
+    stars += `<ion-icon name="star-outline"></ion-icon>`;
   }
   return stars;
 };
