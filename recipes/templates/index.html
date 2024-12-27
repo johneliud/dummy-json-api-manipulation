@@ -45,22 +45,38 @@
             />
           </div>
           <div class="featured-details">
-            <h2>{{ (index .Recipes 0).Name }}</h2>
+            <h2 class="recipe-name">{{ (index .Recipes 0).Name }}</h2>
             <div class="featured-meta">
-              <div class="ratings-container">
+              <div
+                class="ratings-container"
+                data-rating="{{ (index .Recipes 0).Rating }}"
+              >
                 {{ renderRatingStars (index .Recipes 0).Rating }}
               </div>
-              <p class="cuisine">{{ (index .Recipes 0).Cuisine }}</p>
+              <div class="cuisine-container">
+                <p class="cuisine">{{ (index .Recipes 0).Cuisine }}</p>
+              </div>
             </div>
             <p class="description">
-              Prep Time: {{ (index .Recipes 0).PrepTimeMinutes }} mins • Cook
-              Time: {{ (index .Recipes 0).CookTimeMinutes }} mins
+              <span
+                class="prep-time"
+                data-preptime="{{ (index .Recipes 0).PrepTimeMinutes }}"
+              >
+                Prep Time: {{ (index .Recipes 0).PrepTimeMinutes }} mins
+              </span>
+              •
+              <span
+                class="cook-time"
+                data-cooktime="{{ (index .Recipes 0).CookTimeMinutes }}"
+              >
+                Cook Time: {{ (index .Recipes 0).CookTimeMinutes }} mins
+              </span>
             </p>
           </div>
         </div>
       </div>
 
-      
+      <!-- Recipes List -->
       <div class="recipes-container">
         {{ range .Recipes }}
         <div class="recipe" onclick="window.location.href='/recipe/{{ .ID }}'">
@@ -74,13 +90,24 @@
             </div>
 
             <div class="further-info-container">
-              <div class="ratings-container">
+              <div class="ratings-container" data-rating="{{ .Rating }}">
                 {{ renderRatingStars .Rating }}
               </div>
               <div class="cuisine-container">
-                <p>{{ .Cuisine }}</p>
+                <p class="cuisine">{{ .Cuisine }}</p>
               </div>
             </div>
+
+            <p style="display: none;" class="description">
+              Prep Time:
+              <span class="prep-time" data-preptime="{{ .PrepTimeMinutes }}"
+                >{{ .PrepTimeMinutes }} mins</span
+              >
+              • Cook Time:
+              <span class="cook-time" data-cooktime="{{ .CookTimeMinutes }}"
+                >{{ .CookTimeMinutes }} mins</span
+              >
+            </p>
           </div>
         </div>
         {{ end }}
