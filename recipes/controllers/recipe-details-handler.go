@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 	"recipes/utils"
@@ -15,10 +16,10 @@ func RecipeDetailsHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	recipeID, err := strconv.Atoi(string(pathParts[2][0]))
+	recipeID, err := strconv.Atoi(pathParts[2])
 	if err != nil {
 		internalServerErrorHandler(w, r)
-		log.Printf("Failed converting %v to int: %v\n", pathParts[2][0], err)
+		log.Printf("Failed converting %v to int: %v\n", pathParts[2], err)
 		return
 	}
 
@@ -28,6 +29,7 @@ func RecipeDetailsHandler(w http.ResponseWriter, r *http.Request) {
 		log.Printf("Failed fetching recipe details: %v\n", err)
 		return
 	}
+	fmt.Printf("ID: %v\n Name: %v\n Image: %v\n", recipe.ID, recipe.Name, recipe.Image)
 
 	tmpl := utils.ParseTemplates()
 
