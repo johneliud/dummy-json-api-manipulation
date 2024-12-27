@@ -79,5 +79,5 @@ document.addEventListener("DOMContentLoaded", () => {
   setInterval(() => {
     const randomRecipe = getRandomRecipe();
     updateFeaturedRecipe(randomRecipe);
-  }, 12000);
+  }, 30000);
 });
